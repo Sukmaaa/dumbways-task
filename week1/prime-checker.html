@@ -30,6 +30,7 @@
                 <li><a class="dropdown-item" href="../week1/looping.html">3. Looping</a></li>
                 <li><a class="dropdown-item" href="../week1/convert-value.html">4. Convert Value</a></li>
                 <li><a class="dropdown-item" href="../week1/prime-checker.html">5. Prime Checker</a></li>
+                <li><a class="dropdown-item" href="../week1/study-case.html">6. Study Case</a></li>
               </ul>
             </li>
           </ul>
@@ -45,7 +46,7 @@
          type="number"
          oninput="isPrime(event.target.value)"
          class="form-control"
-         placeholder="masukan angka" disabled>
+         placeholder="masukan angka">
        </div>
        <div class="mb-3">
          <label for="exampleFormControlTextarea1" class="form-label">Output</label>
@@ -64,7 +65,28 @@
            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
              <div class="accordion-body">
                <code>
-                  &lt;On Progress /"&gt;
+                  &lt;input
+                  type="number"
+                  oninput="isPrime(event.target.value)"
+                  class="form-control"
+                  placeholder="masukan angka"&gt;
+                     <br />
+                     <br />
+                     const isPrime = (num) => { <br />
+   
+                        let modular = 0;  <br />
+                     
+                        for (let i = 1; i <= num; i++){  <br />
+                         &nbsp; &nbsp;  if (num % i == 0) {  <br />
+                           &nbsp; &nbsp; &nbsp;   modular++   <br />
+                           &nbsp; &nbsp;    }  <br />
+                           }  <br />
+                        if (modular == 2) {  <br />
+                           &nbsp; &nbsp;   console.log("PRIME");   <br />
+                        } else { <br />
+                           &nbsp; &nbsp;   console.log("NOT PRIME");  <br />
+                        }  <br />
+                     }
                  </code>
              </div>
            </div>
