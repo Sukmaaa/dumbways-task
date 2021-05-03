@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task - Looping</title>
+    <link rel="stylesheet" href="tugas.css">
+</head>
+
+<body>
+    <!-- The sidebar -->
+    <div class="sidebar">
+        <a href="../index.html" style="text-align: center;">Beranda</a>
+        <hr>
+        <a onclick="myFunction()" class="dropbtn">Task 1 - Function</a>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="../1. Function/RegularFunction.html">Regular Function</a>
+            <a href="../1. Function/ArrowFunction.html">Arrow Function</a>
+        </div>
+        <a href="../2. Reverse/Reverse.html">Task 2 - Reverse</a>
+        <a href="../3. Looping/looping.html">Task 3 - Looping</a>
+        <a href="../4. Convert Value/convertValue.html">Task 4 - Conver values</a>
+        <a href="../5. Check Prime Number/primeNumber.html">Task 5 - Prime Number</a>
+        <a href="../6. Math Logic/index.html">Task 6 - Math Logic</a>
+        <a href="../7. Convert Temperature/index.html">Task 7 - Convert Temperature</a>
+        <a href="../8. Study Case/studyCase.html">Task 8 - Study Case</a>
+        <a href="../9. Counting Letter/index.html">Task 9 - Counting Letter</a>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- form pertama -->
+            <form class="form-container" onsubmit="return data1()">
+                <h3 style="text-align: center;">Perulangan 1</h3>
+                <div>
+                    <label>Inputkan Deret</label>
+                    <input id="number1" class="custom-input" type="number" placeholder="Inputkan Angka">
+                </div>
+                <div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </div>
+                <p id="output1"></p>
+            </form>
+            <hr>
+            <!-- form kedua -->
+            <form class="form-container" onsubmit="return data2()">
+                <h3 style="text-align: center;">Perulangan 2</h3>
+                <div>
+                    <label>Inputkan Deret</label>
+                    <input id="number2" class="custom-input" type="number" placeholder="Inputkan Angka">
+                </div>
+                <div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </div>
+                <p id="output2"></p>
+            </form>
+            <hr>
+            <!-- form ketigas -->
+            <form class="form-container" onsubmit="return data3()">
+                <h3 style="text-align: center;">Perulangan 3</h3>
+                <div>
+                    <label>Inputkan Deret</label>
+                    <input id="number3" class="custom-input" type="number" placeholder="Inputkan Angka">
+                </div>
+                <div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </div>
+                <ul id="output3"></ul>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        function data1() {
+            const number1 = document.getElementById("number1").value;
+            text = " ";
+            for (i = 1; i <= number1; i++) {
+                text += "<p style='display: block;'>" + "Deret : " + i + "</p>";
+            }
+            document.getElementById("output1").innerHTML = text;
+            return false;
+        }
+
+        function data2() {
+            const number2 = document.getElementById("number2").value;
+            text = " ";
+            for (i = 1; i <= number2; i++) {
+                text += "<p style='display: block;'>" + "Deret : " + i * i + "</p>";
+            }
+            document.getElementById("output2").innerHTML = text;
+            return false;
+        }
+
+        function data3() {
+            const number3 = document.getElementById("number3").value;
+
+            let temp = [];
+            for (i = 1; i <= number3; i++) {
+                temp.push(`
+        <li>Deret ke ${i * 3}</li>
+    `);
+            }
+
+            document.getElementById("output3").innerHTML = temp.join(" ");
+
+            return false;
+        }
+    </script>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

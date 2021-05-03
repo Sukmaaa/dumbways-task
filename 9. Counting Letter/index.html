@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - Counting Letter</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tugas.css">
+
+</head>
+
+<!-- The sidebar -->
+<div class="sidebar">
+    <a href="../index.html" style="text-align: center;">Beranda</a>
+    <hr>
+    <a onclick="myFunction()" class="dropbtn">Task 1 - Function</a>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="../1. Function/RegularFunction.html">Regular Function</a>
+        <a href="../1. Function/ArrowFunction.html">Arrow Function</a>
+    </div>
+    <a href="../2. Reverse/Reverse.html">Task 2 - Reverse</a>
+    <a href="../3. Looping/looping.html">Task 3 - Looping</a>
+    <a href="../4. Convert Value/convertValue.html">Task 4 - Conver values</a>
+    <a href="../5. Check Prime Number/primeNumber.html">Task 5 - Prime Number</a>
+    <a href="../6. Math Logic/index.html">Task 6 - Math Logic</a>
+    <a href="../7. Convert Temperature/index.html">Task 7 - Convert Temperature</a>
+    <a href="../8. Study Case/studyCase.html">Task 8 - Study Case</a>
+    <a href="../9. Counting Letter/index.html">Task 9 - Counting Letter</a>
+</div>
+
+<!-- Page content -->
+<div class="content">
+    <div class="container">
+        <!-- form pertama -->
+        <form class="form-container" onsubmit="return data()">
+            <h3 style="text-align: center;">Counting Letter</h3>
+            <div>
+                <label> Inputkan Huruf </label>
+                <input id="letter" class="custom-input" type="text" placeholder="Inputkan Huruf">
+            </div>
+            <div>
+                <label> Inputkan Kata </label>
+                <input id="word" class="custom-input" type="text" placeholder="Inputkan Kata">
+            </div>
+            <div>
+                <button type="submit" class="btn-primary">Submit</button>
+            </div>
+            <p id="output"></p>
+        </form>
+
+    </div>
+</div>
+
+<script>
+
+    function data() {
+        const word = document.getElementById("word").value;
+        const letter = document.getElementById("letter").value;
+
+        let letterCount = 0;
+        for (let i = 0; i < word.length; i++) {
+            if (word.charAt(i) == letter) {
+                letterCount++;
+            }
+        }
+
+        document.getElementById("output").innerHTML = "Total huruf " + letter + " Sebanyak " + letterCount + " buah";
+
+        return false;
+    }
+
+
+
+
+</script>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

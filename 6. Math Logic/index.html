@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - Math Logic</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tugas.css">
+
+</head>
+
+<!-- The sidebar -->
+<div class="sidebar">
+    <a href="../index.html" style="text-align: center;">Beranda</a>
+    <hr>
+    <a onclick="myFunction()" class="dropbtn">Task 1 - Function</a>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="../1. Function/RegularFunction.html">Regular Function</a>
+        <a href="../1. Function/ArrowFunction.html">Arrow Function</a>
+    </div>
+    <a href="../2. Reverse/Reverse.html">Task 2 - Reverse</a>
+    <a href="../3. Looping/looping.html">Task 3 - Looping</a>
+    <a href="../4. Convert Value/convertValue.html">Task 4 - Conver values</a>
+    <a href="../5. Check Prime Number/primeNumber.html">Task 5 - Prime Number</a>
+    <a href="../6. Math Logic/index.html">Task 6 - Math Logic</a>
+    <a href="../7. Convert Temperature/index.html">Task 7 - Convert Temperature</a>
+    <a href="../8. Study Case/studyCase.html">Task 8 - Study Case</a>
+    <a href="../9. Counting Letter/index.html">Task 9 - Counting Letter</a>
+</div>
+
+<!-- Page content -->
+<div class="content">
+    <div class="container">
+        <!-- form pertama -->
+        <form class="form-container" onsubmit="return data()">
+            <h3 style="text-align: center;">Math Logic</h3>
+            <div>
+                <label> Nama Pegawai </label>
+                <input id="name" class="custom-input" type="text" placeholder="Inputkan Nama">
+            </div>
+            <div>
+                <label> Golongan A-D </label>
+                <input id="group" class="custom-input" type="text" placeholder="Inputkan Golongan">
+            </div>
+            <div>
+                <label> Lama Bekerja </label>
+                <input id="lengthWork" class="custom-input" type="number" placeholder="Inputkan Lama Bekerja">
+            </div>
+            <div>
+                <button type="submit" class="btn-primary">Submit</button>
+            </div>
+            <p id="output1"></p>
+            <p id="output2"></p>
+            <p id="output3"></p>
+            <p id="output4"></p>
+            <p id="output5"></p>
+            <p id="output6"></p>
+        </form>
+
+    </div>
+</div>
+
+<script>
+
+    function data() {
+        let name = document.getElementById("name").value;
+        let group = document.getElementById("group").value;
+        let lengthWork = document.getElementById("lengthWork").value;
+        let gajiBulanan = 0;
+        let gajiHarian = 0;
+        let gajiPerjam = lengthWork * 30;
+        let gajiGol = 0;
+        let lembur = 0;
+        let total = 0;
+
+
+        if (group === "A" || "a") {
+            gajiGol = 1000;
+            gajiHarian = gajiGol * lengthWork;
+        } else if (group === "B" || "b") {
+            gajiGol = 2000;
+            gajiHarian = gajiPerjam * lengthWork;
+        } else if (group === "C" || "c") {
+            gajiGol = 2000;
+            gajiHarian = gajiGol * lengthWork;
+        } else if (group === "D" || "d") {
+            gajiGol = 2000;
+            gajiHarian = gajiGol * lengthWork;
+        }
+
+        gajiBulanan = gajiGol * lengthWork * 30;
+        if (gajiPerjam >= 200) {
+            lembur = gajiPerjam * 200;
+        }
+        total = gajiBulanan + lembur;
+
+        document.getElementById("output1").innerHTML = "Nama : " + name;
+        document.getElementById("output2").innerHTML = "Golongan : " + group;
+        document.getElementById("output3").innerHTML = "Gaji Harian : " + gajiHarian.toFixed(2);
+        document.getElementById("output4").innerHTML = "Gaji Bulanan : " + gajiBulanan.toFixed(2);
+        document.getElementById("output5").innerHTML = "Lembur : " + lembur.toFixed(2);
+        document.getElementById("output6").innerHTML = "Total Keseluruhan : " + total.toFixed(2);
+
+        return false;
+    }
+
+
+</script>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Task - Function</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="tugas.css">
+</head>
+
+<body>
+	<!-- The sidebar -->
+	<div class="sidebar">
+		<a href="../index.html style=" text-align: center;">Beranda</a>
+		<hr>
+		<a onclick="myFunction()" class="dropbtn">Task 1 - Function</a>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="../1. Function/RegularFunction.html">Regular Function</a>
+			<a href="../1. Function/ArrowFunction.html">Arrow Function</a>
+		</div>
+		<a href="../2. Reverse/Reverse.html">Task 2 - Reverse</a>
+		<a href="../3. Looping/looping.html">Task 3 - Looping</a>
+		<a href="../4. Convert Value/convertValue.html">Task 4 - Conver values</a>
+		<a href="../5. Check Prime Number/primeNumber.html">Task 5 - Prime Number</a>
+		<a href="../6. Math Logic/index.html">Task 6 - Math Logic</a>
+		<a href="../7. Convert Temperature/index.html">Task 7 - Convert Temperature</a>
+		<a href="../8. Study Case/studyCase.html">Task 8 - Study Case</a>
+		<a href="../9. Counting Letter/index.html">Task 9 - Counting Letter</a>
+	</div>
+
+	<div class="content">
+		<div class="container">
+			<form class="form-container" onsubmit="return data()">
+				<h1 align="center">Regular Function</h1>
+				<div>
+					<label>Inputkan Text</label>
+					<input id="regular" class="custom-input" type="text" placeholder="Inputkan Text">
+				</div>
+				<div>
+					<label>Hasil Text</label>
+					<textarea id="output" class="custom-input" placeholder="Hasil" disabled></textarea>
+				</div>
+				<div>
+					<button type="submit" class="btn-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- 1. Regular Function -->
+	<script>
+		function data() {
+			const regular = document.getElementById("regular").value;
+
+			document.getElementById("output").innerHTML = regular;
+
+			return false;
+		}
+
+	</script>
+	<script>
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		window.onclick = function (event) {
+			if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

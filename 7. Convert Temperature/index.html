@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - Convert Temperature</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tugas.css">
+
+</head>
+
+<!-- The sidebar -->
+<div class="sidebar">
+    <a href="../index.html" style="text-align: center;">Beranda</a>
+    <hr>
+    <a onclick="myFunction()" class="dropbtn">Task 1 - Function</a>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="../1. Function/RegularFunction.html">Regular Function</a>
+        <a href="../1. Function/ArrowFunction.html">Arrow Function</a>
+    </div>
+    <a href="../2. Reverse/Reverse.html">Task 2 - Reverse</a>
+    <a href="../3. Looping/looping.html">Task 3 - Looping</a>
+    <a href="../4. Convert Value/convertValue.html">Task 4 - Conver values</a>
+    <a href="../5. Check Prime Number/primeNumber.html">Task 5 - Prime Number</a>
+    <a href="../6. Math Logic/index.html">Task 6 - Math Logic</a>
+    <a href="../7. Convert Temperature/index.html">Task 7 - Convert Temperature</a>
+    <a href="../8. Study Case/studyCase.html">Task 8 - Study Case</a>
+    <a href="../9. Counting Letter/index.html">Task 9 - Counting Letter</a>
+</div>
+
+<!-- Page content -->
+<div class="content">
+    <div class="container">
+        <!-- form pertama -->
+        <form class="form-container">
+            <h3 style="text-align: center;">Study Case</h3>
+            <div>
+                <label> Fahrenheit </label>
+                <input id="inputFahrenheit" class="custom-input" type="number" placeholder="Inputkan Fahrenheit"
+                    oninput="temperatureConverter(this.id,this.value)"
+                    onchange="temperatureConverter(this.id,this.value)">
+            </div>
+            <div>
+                <label> Celsius </label>
+                <input id="inputCelsius" class="custom-input" type="number" placeholder="Inputkan Celsius"
+                    oninput="temperatureConverter(this.id,this.value)"
+                    onchange="temperatureConverter(this.id,this.value)">
+            </div>
+            <div>
+                <label> Kelvin </label>
+                <input id="inputKelvin" class="custom-input" type="number" placeholder="Inputkan Kelvin"
+                    oninput="temperatureConverter(this.id,this.value)"
+                    onchange="temperatureConverter(this.id,this.value)">
+            </div>
+            <div>
+                <label> Reamur </label>
+                <input id="inputReamur" class="custom-input" type="number" placeholder="Inputkan Reamur"
+                    oninput="temperatureConverter(this.id,this.value)"
+                    onchange="temperatureConverter(this.id,this.value)">
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+
+    function temperatureConverter(source, valNum) {
+        valNum = parseFloat(valNum);
+        const inputFahrenheit = document.getElementById("inputFahrenheit");
+        const inputCelsius = document.getElementById("inputCelsius");
+        const inputKelvin = document.getElementById("inputKelvin");
+        if (source == "inputFahrenheit") {
+            inputCelsius.value = ((valNum - 32) / 1.8).toFixed(2);
+            inputKelvin.value = (((valNum - 32) / 1.8) + 273.15).toFixed(2);
+            inputReamur.value = ((valNum - 32) / 0.444444).toFixed(2);
+        }
+        if (source == "inputCelsius") {
+            inputFahrenheit.value = ((valNum * 1.8) + 32).toFixed(2);
+            inputKelvin.value = ((valNum) + 273.15).toFixed(2);
+            inputReamur.value = (valNum * 0.8).toFixed(2);
+        }
+        if (source == "inputKelvin") {
+            inputFahrenheit.value = (((valNum - 273.15) * 1.8) + 32).toFixed(2);
+            inputCelsius.value = ((valNum) - 273.15).toFixed(2);
+            inputReamur.value = ((valNum - 273.15) * 0.8).toFixed(2);
+        }
+        if (source == "inputReamur") {
+            inputFahrenheit.value = ((valNum + 32) * 2.25).toFixed(2);
+            inputCelsius.value = (valNum * 1.25).toFixed(2);
+            inputKelvin.value = ((valNum * 1.25) + 273.15).toFixed(2);
+        }
+    }
+
+</script>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

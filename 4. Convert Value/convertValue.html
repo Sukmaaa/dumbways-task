@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task - Convert Value</title>
+    <link rel="stylesheet" href="tugas.css">
+</head>
+
+<body>
+    <!-- The sidebar -->
+    <div class="sidebar">
+        <a href="../index.html" style="text-align: center;">Beranda</a>
+        <hr>
+        <a onclick="myFunction()" class="dropbtn">Task 1 - Function</a>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="../1. Function/RegularFunction.html">Regular Function</a>
+            <a href="../1. Function/ArrowFunction.html">Arrow Function</a>
+        </div>
+        <a href="../2. Reverse/Reverse.html">Task 2 - Reverse</a>
+        <a href="../3. Looping/looping.html">Task 3 - Looping</a>
+        <a href="../4. Convert Value/convertValue.html">Task 4 - Conver values</a>
+        <a href="../5. Check Prime Number/primeNumber.html">Task 5 - Prime Number</a>
+        <a href="../6. Math Logic/index.html">Task 6 - Math Logic</a>
+        <a href="../7. Convert Temperature/index.html">Task 7 - Convert Temperature</a>
+        <a href="../8. Study Case/studyCase.html">Task 8 - Study Case</a>
+        <a href="../9. Counting Letter/index.html">Task 9 - Counting Letter</a>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- form pertama -->
+            <form class="form-container" onsubmit="return data()">
+                <h3 style="text-align: center;">Convert Value</h3>
+                <div>
+                    <label>Inputkan Nilai</label>
+                    <input id="convert" class="custom-input" type="text" placeholder="Inputkan Nilai 0-90">
+                </div>
+                <div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </div>
+                <p id="output"></p>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        // Range CLASS
+        // A = 86-90;
+        // B = 70-85
+        // C = 50-69
+        // D = 30-49
+        // E = 0-29
+
+        function data() {
+            const convert = document.getElementById("convert").value;
+
+            if (convert >= 86 && convert <= 90) {
+                document.getElementById("output").innerHTML = "Nilai Konversi Adalah A";
+            } else if (convert >= 70 && convert <= 85) {
+                document.getElementById("output").innerHTML = "Nilai Konversi Adalah B";
+            } else if (convert >= 50 && convert <= 69) {
+                document.getElementById("output").innerHTML = "Nilai Konversi Adalah C";
+            } else if (convert >= 30 && convert <= 49) {
+                document.getElementById("output").innerHTML = "Nilai Konversi Adalah D";
+            } else if (convert >= 0 && convert <= 29) {
+                document.getElementById("output").innerHTML = "Nilai Konversi Adalah E";
+            } else {
+                document.getElementById("output").innerHTML = "Please Inputkan Nilai Dari 0-90";
+            }
+
+            return false;
+
+        }
+
+    </script>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
