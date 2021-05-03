@@ -41,7 +41,7 @@
                         </thead>
                         <tbody style="text-align: center;">
                             <tr>
-                                <td>80-90</td>
+                                <td>80-100</td>
                                 <td>A</td>
                             </tr>
                             <tr>
@@ -66,7 +66,7 @@
                 <br>
                 <div>
                     <label>Inputkan Nilai</label>
-                    <input id="convert" class="custom-input" type="text" placeholder="Inputkan Nilai 0-90">
+                    <input id="convert" class="custom-input" type="text" placeholder="Inputkan Nilai 0-100">
                 </div>
                 <div>
                     <button type="submit" class="btn-primary">Submit</button>
@@ -78,7 +78,7 @@
     </div>
     <script>
         // Range CLASS
-        // A = 86-90;
+        // A = 86-100;
         // B = 70-85
         // C = 50-69
         // D = 30-49
@@ -87,7 +87,7 @@
         function data() {
             const convert = document.getElementById("convert").value;
 
-            if (convert >= 86 && convert <= 90) {
+            if (convert >= 86 && convert <= 100) {
                 document.getElementById("output").innerHTML = "Nilai Konversi Adalah A";
             } else if (convert >= 70 && convert <= 85) {
                 document.getElementById("output").innerHTML = "Nilai Konversi Adalah B";
@@ -98,7 +98,7 @@
             } else if (convert >= 0 && convert <= 29) {
                 document.getElementById("output").innerHTML = "Nilai Konversi Adalah E";
             } else {
-                document.getElementById("output").innerHTML = "Please Inputkan Nilai Dari 0-90";
+                document.getElementById("output").innerHTML = "Please Inputkan Nilai Dari 0-100";
             }
 
             return false;
