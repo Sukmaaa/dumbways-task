@@ -36,7 +36,7 @@
 <div class="content">
     <div class="container">
         <!-- form pertama -->
-        <form class="form-container" onsubmit="return data()">
+        <form class="form-container" onsubmit="return mathLogic()">
             <h3 style="text-align: center;">Math Logic</h3>
             <div>
                 <label> Nama Pegawai </label>
@@ -66,43 +66,43 @@
 
 <script>
 
-    function data() {
+    function mathLogic() {
         let name = document.getElementById("name").value;
         let group = document.getElementById("group").value;
         let lengthWork = document.getElementById("lengthWork").value;
-        let gajiBulanan = 0;
-        let gajiHarian = 0;
-        let gajiPerjam = lengthWork * 30;
-        let gajiGol = 0;
+        let month = 0;
+        let day = 0;
+        let hour = lengthWork * 30;
+        let classSalary = 0;
         let lembur = 0;
         let total = 0;
 
 
 
         if (group == "A" || group == "a") {
-            gajiGol = 1000;
-            gajiHarian = gajiGol * lengthWork;
+            classSalary = 1000;
+            day = classSalary * lengthWork;
         } else if (group == "B" || group == "b") {
-            gajiGol = 2000;
-            gajiHarian = gajiGol * lengthWork;
+            classSalary = 2000;
+            day = classSalary * lengthWork;
         } else if (group == "C" || group == "c") {
-            gajiGol = 3000;
-            gajiHarian = gajiGol * lengthWork;
+            classSalary = 3000;
+            day = classSalary * lengthWork;
         } else if (group == "D" || group == "d") {
-            gajiGol = 4000;
-            gajiHarian = gajiGol * lengthWork;
+            classSalary = 4000;
+            day = classSalary * lengthWork;
         }
 
-        gajiBulanan = gajiGol * lengthWork * 30;
-        if (gajiPerjam >= 200) {
-            lembur = gajiPerjam * 200;
+        month = classSalary * lengthWork * 30;
+        if (hour >= 200) {
+            lembur = hour * 200;
         }
-        total = gajiBulanan + lembur;
+        total = month + lembur;
 
         document.getElementById("output1").innerHTML = "Nama : " + name;
         document.getElementById("output2").innerHTML = "Golongan : " + group.toUpperCase();
-        document.getElementById("output3").innerHTML = "Gaji Harian : Rp." + gajiHarian.toFixed(2);
-        document.getElementById("output4").innerHTML = "Gaji Bulanan : Rp." + gajiBulanan.toFixed(2);
+        document.getElementById("output3").innerHTML = "Gaji Harian : Rp." + day.toFixed(2);
+        document.getElementById("output4").innerHTML = "Gaji Bulanan : Rp." + month.toFixed(2);
         document.getElementById("output5").innerHTML = "Lembur : Rp." + lembur.toFixed(2);
         document.getElementById("output6").innerHTML = "Total Keseluruhan : Rp." + total.toFixed(2);
 
