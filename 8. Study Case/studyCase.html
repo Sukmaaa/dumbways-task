@@ -66,7 +66,7 @@
                 </section>
                 <div>
                     <label>Inputkan Umur</label>
-                    <input id="umur" class="custom-input" type="text" placeholder="Inputkan Umur">
+                    <input id="age" class="custom-input" type="text" placeholder="Inputkan Umur">
                 </div>
                 <div>
                     <button type="submit" class="btn-primary">Submit</button>
@@ -84,18 +84,18 @@
         // Lansia = Else
 
         function data() {
-            const umur = document.getElementById("umur").value;
+            const age = document.getElementById("age").value;
 
-            if (umur >= 0 && umur <= 1) {
-                document.getElementById("output").innerHTML = "Umur " + umur + " tahun adalah Bayi";
-            } else if (umur >= 2 && umur <= 10) {
-                document.getElementById("output").innerHTML = "Umur " + umur + " tahun adalah Anak-anak";
-            } else if (umur >= 11 && umur <= 19) {
-                document.getElementById("output").innerHTML = "Umur " + umur + " tahun adalah Remaja";
-            } else if (umur >= 20 && umur <= 60) {
-                document.getElementById("output").innerHTML = "Umur " + umur + " tahun adalah Dewasa";
+            if (age >= 0 && age <= 1) {
+                document.getElementById("output").innerHTML = "Umur " + age + " tahun adalah Bayi";
+            } else if (age >= 2 && age <= 10) {
+                document.getElementById("output").innerHTML = "Umur " + age + " tahun adalah Anak-anak";
+            } else if (age >= 11 && age <= 19) {
+                document.getElementById("output").innerHTML = "Umur " + age + " tahun adalah Remaja";
+            } else if (age >= 20 && age <= 60) {
+                document.getElementById("output").innerHTML = "Umur " + age + " tahun adalah Dewasa";
             } else {
-                document.getElementById("output").innerHTML = "Umur " + umur + " tahun adalah Lanjut usia";
+                document.getElementById("output").innerHTML = "Umur " + age + " tahun adalah Lanjut usia";
             }
 
 
