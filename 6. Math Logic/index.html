@@ -78,17 +78,18 @@
         let total = 0;
 
 
-        if (group === "A" || "a") {
+
+        if (group == "A" || group == "a") {
             gajiGol = 1000;
             gajiHarian = gajiGol * lengthWork;
-        } else if (group === "B" || "b") {
-            gajiGol = 2000;
-            gajiHarian = gajiPerjam * lengthWork;
-        } else if (group === "C" || "c") {
+        } else if (group == "B" || group == "b") {
             gajiGol = 2000;
             gajiHarian = gajiGol * lengthWork;
-        } else if (group === "D" || "d") {
-            gajiGol = 2000;
+        } else if (group == "C" || group == "c") {
+            gajiGol = 3000;
+            gajiHarian = gajiGol * lengthWork;
+        } else if (group == "D" || group == "d") {
+            gajiGol = 4000;
             gajiHarian = gajiGol * lengthWork;
         }
 
@@ -99,11 +100,11 @@
         total = gajiBulanan + lembur;
 
         document.getElementById("output1").innerHTML = "Nama : " + name;
-        document.getElementById("output2").innerHTML = "Golongan : " + group;
-        document.getElementById("output3").innerHTML = "Gaji Harian : " + gajiHarian.toFixed(2);
-        document.getElementById("output4").innerHTML = "Gaji Bulanan : " + gajiBulanan.toFixed(2);
-        document.getElementById("output5").innerHTML = "Lembur : " + lembur.toFixed(2);
-        document.getElementById("output6").innerHTML = "Total Keseluruhan : " + total.toFixed(2);
+        document.getElementById("output2").innerHTML = "Golongan : " + group.toUpperCase();
+        document.getElementById("output3").innerHTML = "Gaji Harian : Rp." + gajiHarian.toFixed(2);
+        document.getElementById("output4").innerHTML = "Gaji Bulanan : Rp." + gajiBulanan.toFixed(2);
+        document.getElementById("output5").innerHTML = "Lembur : Rp." + lembur.toFixed(2);
+        document.getElementById("output6").innerHTML = "Total Keseluruhan : Rp." + total.toFixed(2);
 
         return false;
     }
